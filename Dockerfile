@@ -16,13 +16,13 @@ RUN yum upgrade -y && yum update -y
 
 # 安装必备库
 RUN yum -y install \
-	scl \
     wget \
     git \
     zsh \
     curl \
 	centos-release-scl \
-	devtoolset-3-toolchain \
+	scl-utils \
+	devtoolset-3-gcc devtoolset-3-gcc-c++ devtoolset-3-gdb devtoolset-3-toolchain \
 	gcc-c++ \
 	python-devel \
 	ncurses-devel \
