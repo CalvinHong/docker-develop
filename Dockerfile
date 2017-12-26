@@ -12,6 +12,7 @@ RUN yum update -y
 
 # 安装必备库
 RUN yum -y install \
+	scl \
     wget \
     git \
     zsh \
