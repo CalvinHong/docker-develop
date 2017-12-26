@@ -32,8 +32,7 @@ RUN yum install -y \
 
 
 # 更新vim
-RUN yum remove vim-* -y && \
-    cd /usr/local/src && \
+RUN cd /usr/local/src && \
 	git clone https://github.com/vim/vim.git && \
 	cd vim && \
 	./configure \
