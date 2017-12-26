@@ -15,14 +15,16 @@ RUN yum upgrade -y && yum update -y
 # RUN yum clean all
 
 # 安装必备库
+RUN yum install -y centos-release-scl
+RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
+RUN yum install -y devtoolset-3
+RUN scl enable devtoolset-3 bash
+# 激活devtoolset3
 RUN yum install -y \
     wget \
     git \
     zsh \
     curl \
-	centos-release-scl \
-	scl-utils \
-	devtoolset-3 \
 	gcc-c++ \
 	python-devel \
 	ncurses-devel \
@@ -30,9 +32,6 @@ RUN yum install -y \
 	xz-devel \
 	automake \
 	the_silver_searcher
-
-# 激活devtoolset3
-RUN scl enable devtoolset-3 bash
 
 
 # 更新vim
