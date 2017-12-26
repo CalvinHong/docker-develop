@@ -22,12 +22,12 @@ RUN yum install -y \
     git \
     zsh \
     curl \
-	gcc-c++ \
+	gcc gcc-c+ \
+	automake autoconf libtool make \
 	python-devel \
 	ncurses-devel \
 	pcre-devel \
 	xz-devel \
-	automake \
 	the_silver_searcher
 
 
