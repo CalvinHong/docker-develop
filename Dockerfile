@@ -4,12 +4,12 @@ FROM centos:7
 
 USER root
 
+RUN yum -y install wget
+
 #备份源
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
 RUN cd /etc/yum.repos.d/
-
-RUN yum -y install wget
 
 # 使用163源
 RUN wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
