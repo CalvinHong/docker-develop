@@ -20,6 +20,7 @@ RUN yum upgrade && yum update
 
 # 安装必备库
 RUN yum -y install \
+    wget \
     git \
     zsh \
     curl \
