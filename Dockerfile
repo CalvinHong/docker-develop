@@ -22,7 +22,7 @@ RUN yum install -y \
     curl \
 	centos-release-scl \
 	scl-utils \
-	devtoolset-3-gcc devtoolset-3-gcc-c++ devtoolset-3-gdb devtoolset-3-toolchain \
+	devtoolset-3 \
 	gcc-c++ \
 	python-devel \
 	ncurses-devel \
