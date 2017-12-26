@@ -15,7 +15,7 @@ RUN cd /etc/yum.repos.d/
 RUN wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
 
 # 清除缓存
-RUN yum clean all && yum makecache
+RUN yum clean all
 
 # 系统升级
 RUN yum upgrade && yum update
