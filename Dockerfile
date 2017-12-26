@@ -4,10 +4,6 @@ FROM centos:7
 
 USER root
 
-# 添加源
-RUN rpm -ivh "http://vault.centos.org/6.6/updates/x86_64/Packages/scl-utils-20120927-27.el6_6.x86_64.rpm"
-RUN rpm -ivh "https://www.softwarecollections.org/repos/rhscl/devtoolset-3/epel-6-x86_64/noarch/rhscl-devtoolset-3-epel-6-x86_64-1-2.noarch.rpm"
-
 # 系统升级
 RUN yum upgrade -y && yum update -y
 
@@ -15,11 +11,12 @@ RUN yum upgrade -y && yum update -y
 # RUN yum clean all
 
 # 安装必备库
-RUN yum install -y centos-release-scl
-RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
-RUN yum install -y devtoolset-3
-RUN scl enable devtoolset-3 bash
-# 激活devtoolset3
+# RUN yum install -y centos-release-scl
+# RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
+# RUN yum install -y devtoolset-3
+# # 激活devtoolset3
+# RUN scl enable devtoolset-3 bash
+
 RUN yum install -y \
     wget \
     git \
