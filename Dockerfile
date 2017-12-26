@@ -15,7 +15,7 @@ RUN yum upgrade -y && yum update -y
 # RUN yum clean all
 
 # 安装必备库
-RUN yum -y install \
+RUN yum install -y \
     wget \
     git \
     zsh \
