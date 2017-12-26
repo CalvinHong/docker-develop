@@ -4,24 +4,15 @@ FROM centos:7
 
 USER root
 
-RUN yum -y install wget
-
-#备份源
-RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-
-RUN cd /etc/yum.repos.d/
-
-# 使用163源
-RUN wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
-
 # 系统升级
 RUN yum update
 
 # 清除缓存
-RUN yum clean all
+# RUN yum clean all
 
 # 安装必备库
 RUN yum -y install \
+    wget \
     git \
     zsh \
     curl \
