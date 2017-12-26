@@ -5,7 +5,7 @@ FROM centos:7
 USER root
 
 # 系统升级
-RUN yum update
+RUN yum update -y
 
 # 清除缓存
 # RUN yum clean all
