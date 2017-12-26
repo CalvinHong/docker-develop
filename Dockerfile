@@ -9,6 +9,8 @@ RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backu
 
 RUN cd /etc/yum.repos.d/
 
+RUN yum -y install wget
+
 # 使用163源
 RUN wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
 
@@ -20,7 +22,6 @@ RUN yum upgrade && yum update
 
 # 安装必备库
 RUN yum -y install \
-    wget \
     git \
     zsh \
     curl \
