@@ -18,6 +18,7 @@ RUN yum upgrade -y && yum update -y
 # RUN scl enable devtoolset-3 bash
 
 RUN yum install -y \
+    sudo \
     wget \
     git \
     zsh \
@@ -52,7 +53,7 @@ RUN cd /usr/local/src && \
 	# python配置目录
 	--with-python-config-dir=/usr/lib64/python2.7/config && \
 	make && \
-	sudo make install
+	make install
 
 # 设置vim配置	
 RUN cd ~ && \
