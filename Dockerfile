@@ -76,9 +76,11 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh
 
 #安装nvm
 ENV NODE_VERSION 9.3.0
+ENV NVM_DIR ~/.nvm
 
 #install the specified node version and set it as the default one, install the global npm packages
-RUN nvm install $NODE_VERSION && \
+RUN . ~/.nvm/nvm.sh && \
+    nvm install $NODE_VERSION && \
 	nvm alias default $NODE_VERSION && \
 	npm install -g \
 	pm2 \
