@@ -75,8 +75,8 @@ RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/too
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
 #安装nvm
-ENV NODE_VERSION 9.3.0
-ENV NVM_DIR ~/.nvm
+ENV NVM_DIR /home/root/.nvm
+ENV NODE_VERSION stable
 
 #安装nodejs版本
 RUN . $NVM_DIR/nvm.sh \
