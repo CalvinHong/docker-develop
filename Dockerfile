@@ -31,12 +31,13 @@ RUN yum install -y \
 	xz-devel \
 	the_silver_searcher
 	
+# 设置zsh为默认shell	
 ENV SHELL /bin/zsh
-# 设置zsh为默认shell
+RUN chsh -s /bin/zsh
+
 # 安装oh my zsh	
 RUN zsh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-RUN chsh -s /bin/zsh
-RUN ls -al ~/
+
 
 # 更新vim
 RUN cd /usr/local/src && \
@@ -65,15 +66,6 @@ RUN cd /usr/local/src && \
 RUN cd ~ && \
     git clone https://github.com/CalvinHong/vim.git .vim && \
 	cd .vim && \
-	./install.sh
-
-
-
-
-
-# RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
-
-
 
 #安装nvm
 ENV NVM_DIR ~/.nvm
