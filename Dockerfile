@@ -82,7 +82,7 @@ ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
 
 #安装nodejs版本
-RUN . $NVM_DIR/nvm.sh \
+RUN . $NVM_DIR/nvm.sh && \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
