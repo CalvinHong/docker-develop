@@ -64,7 +64,7 @@ RUN cd ~ && \
 
 
 # 设置zsh为默认shell
-RUN chsh -s /bin/zsh
+RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
 
 # RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
 
