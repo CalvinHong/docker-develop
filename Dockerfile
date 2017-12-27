@@ -80,6 +80,6 @@ RUN zsh -c 'source ~/.zshrc && \
     npm install -g \
         npm \
 	pm2 \
-	babel-core \
+	babel-cli \
 	webpack \
 	nodemon'
