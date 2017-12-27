@@ -79,6 +79,7 @@ ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 
+RUN cat ~/.zshrc
 #安装nodejs版本
 # . $NVM_DIR/nvm.sh && \
 RUN nvm install $NODE_VERSION && \
