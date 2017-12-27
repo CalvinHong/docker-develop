@@ -74,22 +74,19 @@ ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION v9.3.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 #RUN zsh -c 'echo "export PATH=${NVM_DIR}/versions/node/${NODE_VERSION}:${PATH}" >> ~/.zshrc'
-RUN zsh -c 'cat ~/.zshrc'
-RUN zsh -c 'source ~/.zshrc'
-#安装nodejs版本
-#RUN source $NVM_DIR/nvm.sh && \
-RUN zsh -c 'nvm'
-RUN zsh -c 'nvm install $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
-    nvm use --delete-prefix default '
-RUN zsh -c 'which node'
+RUN zsh -c 'source ~/.zshrc && \
+    nvm
+#     nvm install $NODE_VERSION && \
+#     nvm alias default $NODE_VERSION && \
+#     nvm use --delete-prefix default 
+#RUN zsh -c 'which node'
 #ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
 #ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 # 安装npm常用包
-RUN zsh -c 'npm install -g npm'
-RUN zsh -c 'npm install -g \
-        npm \
-	pm2 \
-	babel-core \
-	webpack \
-	nodemon'
+#RUN zsh -c 'npm install -g npm'
+#RUN zsh -c 'npm install -g \
+#        npm \
+#	pm2 \
+# 	babel-core \
+# 	webpack \
+# 	nodemon'
