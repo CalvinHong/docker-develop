@@ -69,14 +69,10 @@ RUN cd ~ && \
 	cd .vim && \
 	./install.sh
 
-#安装nvm
-ENV NVM_DIR ~/.nvm
-ENV NODE_VERSION stable
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
-RUN zsh -c 'source ~/.zshrc && \
-    nvm install $NODE_VERSION && \
-    nvm alias default $NODE_VERSION && \
-    nvm use --delete-prefix default && \
+#安装node.js
+RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | zsh - && 
+    zsh -c 'yum install nodejs && \
+    source ~/.zshrc && 
     npm install -g \
 	pm2 \
 	webpack \
