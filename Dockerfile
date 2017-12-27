@@ -33,7 +33,7 @@ RUN yum install -y \
 
 # 设置zsh为默认shell
 # 安装oh my zsh	
-RUN curl -o- https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh
+RUN "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
 RUN ls -al ~/
 
