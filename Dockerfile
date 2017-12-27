@@ -86,6 +86,7 @@ RUN . $NVM_DIR/nvm.sh \
 # NVM环境变量
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+# 安装npm常用包
 RUN npm install -g \
 	pm2 \
 	babel-core \
