@@ -33,7 +33,7 @@ RUN yum install -y \
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
-RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN chsh -s /bin/zsh
 
 # 安装oh my zsh	
 RUN zsh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -80,14 +80,13 @@ RUN source $NVM_DIR/nvm.sh && \
     nvm use --delete-prefix default
 # NVM环境变量
 # RUN zsh -c 'cat ~/.zshrc'
-RUN source ~/.zshrc
+RUN ls -al $NVM_DIR/bin
+RUN zsh -c 'source ~/.zshrc'
 # 安装npm常用包
-RUN npm install -g npm
-RUN npm install -g \
+RUN zsh -c 'npm install -g npm'
+RUN zsh -c 'npm install -g \
         npm \
 	pm2 \
 	babel-core \
 	webpack \
-	nodemon
-	
-
+	nodemon'
