@@ -75,7 +75,7 @@ ENV NODE_VERSION v9.3.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 #RUN zsh -c 'echo "export PATH=${NVM_DIR}/versions/node/${NODE_VERSION}:${PATH}" >> ~/.zshrc'
 RUN zsh -c 'source ~/.zshrc && \
-    nvm
+    nvm'
 #     nvm install $NODE_VERSION && \
 #     nvm alias default $NODE_VERSION && \
 #     nvm use --delete-prefix default 
