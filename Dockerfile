@@ -35,7 +35,7 @@ RUN yum install -y \
 # 安装oh my zsh	
 RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
 RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
-
+RUN cat ~/.zshrc
 
 # 更新vim
 RUN cd /usr/local/src && \
@@ -79,7 +79,6 @@ ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 
-RUN cat ~/.zshrc
 #安装nodejs版本
 # . $NVM_DIR/nvm.sh && \
 RUN nvm install $NODE_VERSION && \
