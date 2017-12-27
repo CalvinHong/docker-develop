@@ -78,8 +78,4 @@ RUN zsh -c 'source ~/.zshrc && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default && \
     npm install -g \
-        npm \
-	pm2 \
-	babel-cli \
-	webpack \
-	nodemon'
+        npm'
