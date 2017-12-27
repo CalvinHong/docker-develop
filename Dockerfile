@@ -78,4 +78,5 @@ RUN zsh -c 'source ~/.zshrc && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default && \
     npm install -g \
-        npm'
+        npm \
+	babel-cli'
