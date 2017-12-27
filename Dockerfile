@@ -79,11 +79,7 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $NODE_VERSION && \
     nvm use default
 # NVM环境变量
-# ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-#ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-RUN echo 'export NODE_PATH="$NVM_DIR/v${NODE_VERSION}/lib/node_modules"' >> ~/.zshrc
-RUN echo 'export PATH="$NVM_DIR/versions/node/v${NODE_VERSION}/bin:${PATH}"' >> ~/.zshrc
-RUN zsh -c 'cat ~/.zshrc'
+# RUN zsh -c 'cat ~/.zshrc'
 RUN zsh -c 'source ~/.zshrc'
 # 安装npm常用包
 RUN zsh -c 'npm install -g \
