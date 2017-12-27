@@ -71,7 +71,7 @@ RUN cd ~ && \
 
 #安装nvm
 ENV NVM_DIR ~/.nvm
-ENV NODE_VERSION v9.3.0
+ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 RUN zsh -c 'source ~/.zshrc && \
     nvm install $NODE_VERSION && \
