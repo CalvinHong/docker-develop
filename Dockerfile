@@ -78,6 +78,7 @@ RUN zsh -c 'cat ~/.zshrc'
 RUN zsh -c 'source ~/.zshrc'
 #安装nodejs版本
 #RUN source $NVM_DIR/nvm.sh && \
+RUN zsh -c 'nvm'
 RUN zsh -c 'nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default '
