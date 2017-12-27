@@ -82,10 +82,10 @@ RUN . $NVM_DIR/nvm.sh && \
 #ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 #ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # 安装npm常用包
-RUN npm install -g \
+RUN zsh -c 'npm install -g \
 	pm2 \
 	babel-core \
 	webpack \
-	nodemon
+	nodemon'
 	
 
