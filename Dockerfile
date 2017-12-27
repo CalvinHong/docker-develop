@@ -79,7 +79,7 @@ ENV NODE_VERSION 9.3.0
 ENV NVM_DIR $HOME/.nvm
 
 #安装nodejs版本
-RUN source $NVM_DIR/nvm.sh \
+RUN . $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
