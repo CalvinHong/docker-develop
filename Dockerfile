@@ -33,9 +33,9 @@ RUN yum install -y \
 
 # 设置zsh为默认shell
 # 安装oh my zsh	
-RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
+RUN zsh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
 RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
-RUN cat ~/.zshrc
+RUN ls -al ~/
 
 # 更新vim
 RUN cd /usr/local/src && \
