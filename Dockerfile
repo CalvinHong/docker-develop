@@ -74,13 +74,11 @@ RUN cd ~ && \
 
 
 
-
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
-
 #安装nvm
 ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
-
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
+RUN cat $NVM_DIR/nvm.sh
 #安装nodejs版本
 RUN . $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
