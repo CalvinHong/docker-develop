@@ -66,6 +66,7 @@ RUN cd /usr/local/src && \
 RUN cd ~ && \
     git clone https://github.com/CalvinHong/vim.git .vim && \
 	cd .vim && \
+	./install.sh
 
 #安装nvm
 ENV NVM_DIR ~/.nvm
