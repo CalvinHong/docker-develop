@@ -80,8 +80,8 @@ ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 
 #安装nodejs版本
-RUN . $NVM_DIR/nvm.sh && \
-    nvm install $NODE_VERSION && \
+# . $NVM_DIR/nvm.sh && \
+RUN nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use default
 # NVM环境变量
