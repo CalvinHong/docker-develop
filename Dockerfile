@@ -79,10 +79,10 @@ RUN . $NVM_DIR/nvm.sh && \
     nvm alias default $NODE_VERSION && \
     nvm use default
 # NVM环境变量
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-RUN echo 'export NODE_PATH=$NVM_DIR/v$NODE_VERSION/lib/node_modules' >> ~/.zshrc
-RUN echo 'export PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH' >> ~/.zshrc
+# ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+#ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+#RUN echo 'export NODE_PATH="$NVM_DIR/v$NODE_VERSION/lib/node_modules"' >> ~/.zshrc
+#RUN echo 'export PATH="$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"' >> ~/.zshrc
 RUN cat ~/.zshrc
 RUN source ~/.zshrc
 # 安装npm常用包
