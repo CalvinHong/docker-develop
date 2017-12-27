@@ -21,7 +21,6 @@ RUN yum install -y \
     sudo \
     wget \
     git \
-    zsh \
     curl \
 	gcc gcc-c+ \
 	automake autoconf libtool make \
@@ -64,15 +63,16 @@ RUN cd ~ && \
 
 
 # 设置zsh为默认shell
+# 安装oh my zsh	
+RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
 RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
 
 # RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
 
-# 安装oh my zsh	
-RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
 
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 
 #安装nvm
 ENV NVM_DIR ~/.nvm
