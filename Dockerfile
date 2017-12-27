@@ -72,7 +72,7 @@ RUN cd ~ && \
 #安装node.js
 RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | zsh - && \
     zsh -c 'yum install nodejs && \
-    source ~/.zshrc && 
+    source ~/.zshrc && \
     npm install -g \
 	pm2 \
 	webpack \
