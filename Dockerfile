@@ -76,7 +76,7 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh
 
 #安装nvm
 ENV NODE_VERSION 9.3.0
-ENV NVM_DIR $HOME/.nvm
+ENV NVM_DIR ~/.nvm
 
 #安装nodejs版本
 RUN . $NVM_DIR/nvm.sh \
