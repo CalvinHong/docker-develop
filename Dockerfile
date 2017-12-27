@@ -72,16 +72,20 @@ RUN cd ~ && \
 ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
-
+RUN zsh -c "echo 'export PATH=$NVM_DIR/v$NODE_VERSION/bin:$PATH' >> .zshrc"
+RUN zsh -c 'source ~/.zshrc'
 #安装nodejs版本
 RUN source $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default
+
 # NVM环境变量
 # RUN zsh -c 'cat ~/.zshrc'
-RUN ls -al $NVM_DIR/bin
-RUN zsh -c 'source ~/.zshrc'
+
+
+#ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+#ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 # 安装npm常用包
 RUN zsh -c 'npm install -g npm'
 RUN zsh -c 'npm install -g \
