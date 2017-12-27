@@ -70,7 +70,7 @@ RUN cd ~ && \
 
 #安装nvm
 ENV NVM_DIR ~/.nvm
-ENV NODE_VERSION stable
+ENV NODE_VERSION 9.3.0
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 RUN zsh -c 'echo "export PATH='${NVM_DIR}/${NODE_VERSION}/bin:${PATH}'" >> ~/.zshrc'
 RUN ls -al $NVM_DIR/$NODE_VERSION/bin
