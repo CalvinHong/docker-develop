@@ -23,13 +23,14 @@ RUN yum install -y \
     wget \
     git \
     curl \
-	gcc gcc-c+ \
-	automake autoconf libtool make \
-	python-devel \
-	ncurses-devel \
-	pcre-devel \
-	xz-devel \
-	the_silver_searcher
+    which \
+    gcc gcc-c+ \
+    automake autoconf libtool make \
+    python-devel \
+    ncurses-devel \
+    pcre-devel \
+    xz-devel \
+    the_silver_searcher
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
