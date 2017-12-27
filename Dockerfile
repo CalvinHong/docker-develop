@@ -83,9 +83,9 @@ ENV NODE_VERSION stable
 
 #安装nodejs版本
 RUN . $NVM_DIR/nvm.sh && \
-    && nvm install $NODE_VERSION \
-    && nvm alias default $NODE_VERSION \
-    && nvm use default
+    nvm install $NODE_VERSION && \
+    nvm alias default $NODE_VERSION && \
+    nvm use default
 # NVM环境变量
 #ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 #ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
