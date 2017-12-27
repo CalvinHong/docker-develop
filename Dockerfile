@@ -33,7 +33,7 @@ RUN yum install -y \
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
-RUN chsh -s /bin/zsh
+RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # 安装oh my zsh	
 RUN zsh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -74,18 +74,20 @@ ENV NODE_VERSION stable
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
 
 #安装nodejs版本
-RUN . $NVM_DIR/nvm.sh && \
+RUN source $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
-    nvm use default
+    nvm use --delete-prefix default
 # NVM环境变量
 # RUN zsh -c 'cat ~/.zshrc'
-RUN zsh -c 'source ~/.zshrc'
+RUN source ~/.zshrc
 # 安装npm常用包
-RUN zsh -c 'npm install -g \
+RUN npm install -g npm
+RUN npm install -g \
+        npm \
 	pm2 \
 	babel-core \
 	webpack \
-	nodemon'
+	nodemon
 	
 
