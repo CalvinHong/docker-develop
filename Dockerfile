@@ -30,10 +30,11 @@ RUN yum install -y \
 	pcre-devel \
 	xz-devel \
 	the_silver_searcher
-
+	
+ENV SHELL /bin/zsh
 # 设置zsh为默认shell
 # 安装oh my zsh	
-RUN "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+RUN zsh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
 RUN ls -al ~/
 
