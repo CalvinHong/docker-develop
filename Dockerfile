@@ -80,7 +80,7 @@ RUN source $NVM_DIR/nvm.sh && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default
-
+RUN which node
 #ENV NODE_PATH $NVM_DIR/$NODE_VERSION/lib/node_modules
 #ENV PATH      $NVM_DIR/$NODE_VERSION/bin:$PATH
 # 安装npm常用包
