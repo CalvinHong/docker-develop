@@ -78,12 +78,15 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh
 ENV NODE_VERSION 9.3.0
 ENV NVM_DIR ~/.nvm
 
-#install the specified node version and set it as the default one, install the global npm packages
+#安装nodejs版本
 RUN . ~/.nvm/nvm.sh && \
     nvm install $NODE_VERSION && \
-	nvm alias default $NODE_VERSION && \
-	nvm use default && \
-	npm install -g \
+    nvm alias default $NODE_VERSION && \
+    nvm use default
+# NVM环境变量
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+RUN npm install -g \
 	pm2 \
 	babel-core \
 	webpack \
