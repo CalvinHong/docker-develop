@@ -19,6 +19,7 @@ RUN yum upgrade -y && yum update -y
 
 RUN yum install -y \
     sudo \
+    zsh \
     wget \
     git \
     curl \
@@ -29,6 +30,11 @@ RUN yum install -y \
 	pcre-devel \
 	xz-devel \
 	the_silver_searcher
+
+# 设置zsh为默认shell
+# 安装oh my zsh	
+RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
+RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
 
 
 # 更新vim
@@ -62,10 +68,7 @@ RUN cd ~ && \
 
 
 
-# 设置zsh为默认shell
-# 安装oh my zsh	
-RUN sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"	
-RUN chsh -s /bin/zsh && rm /bin/sh && ln -s /bin/zsh /bin/sh
+
 
 # RUN echo 'export PATH=/usr/local/bin:$PATH' >> ~/.zshrc
 
