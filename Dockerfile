@@ -72,8 +72,8 @@ RUN cd ~ && \
 #安装nvm
 ENV NVM_DIR ~/.nvm
 ENV NODE_VERSION stable
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh
-RUN zsh -c 'source ~/.zshrc && \
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | zsh && \
+    zsh -c 'source ~/.zshrc && \
     nvm install $NODE_VERSION && \
     nvm alias default $NODE_VERSION && \
     nvm use --delete-prefix default && \
