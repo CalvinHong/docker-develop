@@ -15,6 +15,8 @@ RUN apt upgrade -y && \
 # 安装必要库
 RUN apt install -y \
     zsh \
+    git \
+    curl \
     silversearcher-ag \ 
     ctags \
 # vim python2支持    
