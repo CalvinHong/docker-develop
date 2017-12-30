@@ -1,11 +1,11 @@
-FROM centos:7
+FROM ubuntu:16.04
 
 # Calvin Hong <calvin.hongbinfu@gmail.com>
 
 USER root
 
 # 系统升级
-RUN yum upgrade -y && yum update -y
+RUN apt upgrade -y && apt update -y
 
 # 清除缓存
 # RUN yum clean all
@@ -17,7 +17,7 @@ RUN yum upgrade -y && yum update -y
 # # 激活devtoolset3
 # RUN scl enable devtoolset-3 bash
 
-RUN yum install -y \
+RUN apt install -y \
     sudo \
     zsh \
     wget \
@@ -71,7 +71,7 @@ RUN cd ~ && \
 
 #安装node.js
 RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | bash -
-RUN zsh -c 'yum install -y nodejs && \
+RUN zsh -c 'apt install -y nodejs && \
     source ~/.zshrc && \
     npm install -g \
 	pm2 \
