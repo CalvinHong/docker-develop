@@ -14,13 +14,7 @@ RUN apt install -y \
     wget \
     git \
     curl \
-    which \
-    gcc gcc-c+ \
     automake autoconf libtool make \
-    python-devel \
-    ncurses-devel \
-    pcre-devel \
-    xz-devel \
     silversearcher-ag \ 
     ctags
 	
@@ -56,7 +50,8 @@ RUN cd /usr/local/src && \
 	make install
 
 # 设置vim配置	
-RUN cd ~ && \
+RUN apt remove vim && \
+    cd ~ && \
     git clone https://github.com/CalvinHong/vim.git .vim && \
 	cd .vim && \
 	./install.sh && \
