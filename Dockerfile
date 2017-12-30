@@ -39,7 +39,7 @@ RUN cd ~ && \
 	vim +PlugInstall +qall
 
 #安装node.js
-RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN zsh -c 'apt install -y nodejs && \
     source ~/.zshrc && \
     npm install -g \
