@@ -20,7 +20,9 @@ RUN apt install -y \
     silversearcher-ag \ 
     ctags \
 # vim python2支持    
-    vim-nox-py2
+    vim-nox-py2 \
+    build-essential \
+    cmake
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
