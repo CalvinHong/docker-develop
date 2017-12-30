@@ -59,7 +59,8 @@ RUN cd /usr/local/src && \
 RUN cd ~ && \
     git clone https://github.com/CalvinHong/vim.git .vim && \
 	cd .vim && \
-	./install.sh
+	./install.sh && \
+	vim +PlugInstall +qall
 
 #安装node.js
 RUN curl --silent --location https://rpm.nodesource.com/setup_9.x | bash -
