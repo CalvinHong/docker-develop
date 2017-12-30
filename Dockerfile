@@ -21,7 +21,7 @@ RUN apt install -y \
     ncurses-devel \
     pcre-devel \
     xz-devel \
-    the_silver_searcher \ 
+    silversearcher-ag \ 
     ctags
 	
 # 设置zsh为默认shell	
