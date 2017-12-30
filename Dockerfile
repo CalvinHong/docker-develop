@@ -7,16 +7,7 @@ USER root
 # 系统升级
 RUN apt upgrade -y && apt update -y
 
-# 清除缓存
-# RUN yum clean all
-
-# 安装必备库
-# RUN yum install -y centos-release-scl
-# RUN yum-config-manager --enable rhel-server-rhscl-7-rpms
-# RUN yum install -y devtoolset-3
-# # 激活devtoolset3
-# RUN scl enable devtoolset-3 bash
-
+# 安装必要库
 RUN apt install -y \
     sudo \
     zsh \
@@ -30,7 +21,8 @@ RUN apt install -y \
     ncurses-devel \
     pcre-devel \
     xz-devel \
-    the_silver_searcher
+    the_silver_searcher \ 
+    ctags
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
