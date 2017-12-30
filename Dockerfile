@@ -6,6 +6,8 @@ USER root
 
 # 系统升级
 RUN apt upgrade -y && \
+  apt install -y software-properties-common && \
+# 添加vim最新源  
   add-apt-repository -y ppa:jonathonf/vim && \
   apt update -y
 
