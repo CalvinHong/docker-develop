@@ -22,7 +22,9 @@ RUN apt install -y \
 # vim python2支持    
     vim-nox-py2 \
     build-essential \
-    cmake
+    cmake \
+#   powerline字体
+    fonts-powerline
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
