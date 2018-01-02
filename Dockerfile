@@ -58,5 +58,6 @@ RUN zsh -c 'apt install -y nodejs && \
 	webpack \
 	webpack-dev-server'
 
-#设置时间
-RUN echo "Asia/Shanghai" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+#设置区
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
