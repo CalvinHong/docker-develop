@@ -56,4 +56,4 @@ RUN zsh -c 'apt install -y nodejs && \
     npm install -g \
 	pm2 \
 	webpack \
-	nodemon'
+	webpack-dev-server'
