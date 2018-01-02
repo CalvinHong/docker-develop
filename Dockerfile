@@ -14,16 +14,21 @@ RUN apt upgrade -y && \
 
 # 安装必要库
 RUN apt install -y \
+    wget \
     zsh \
     git \
     curl \
+    tree \
+    lsof \
     silversearcher-ag \ 
     ctags \
 # vim python2支持    
     vim-nox-py2 \
+# YouCompeleMe 需要
     build-essential \
     cmake \
-#   powerline字体
+    python-dev \
+#   powerline字体补丁
     fonts-powerline
 	
 # 设置zsh为默认shell	
@@ -32,6 +37,10 @@ RUN chsh -s /bin/zsh
 
 # 安装oh my zsh	
 RUN zsh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# 默认配置
+# 开启256颜色支持
+RUN echo 'export TERM=xterm-256color' >> ~/.zshrc
 
 # 设置vim配置	
 RUN cd ~ && \
