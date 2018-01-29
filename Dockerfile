@@ -27,9 +27,7 @@ RUN apt install -y \
 # YouCompeleMe 需要
     build-essential \
     cmake \
-    python-dev \
-#   powerline字体补丁
-    fonts-powerline
+    python-dev
 	
 # 设置zsh为默认shell	
 ENV SHELL /bin/zsh
@@ -61,3 +59,12 @@ RUN zsh -c 'apt install -y nodejs && \
 #设置区
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+#powerline
+cd ~/ \
+git clone https://github.com/powerline/fonts.git --depth=1 \
+cd fonts \
+./install.sh \
+# clean-up a bit
+cd .. \
+rm -rf fonts
