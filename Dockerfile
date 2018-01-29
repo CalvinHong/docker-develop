@@ -61,7 +61,7 @@ ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 #powerline
-cd ~/ && \
+RUN cd ~/ && \
 git clone https://github.com/powerline/fonts.git --depth=1 && \
 cd fonts && \
 ./install.sh && \
